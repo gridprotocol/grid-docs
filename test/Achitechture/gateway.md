@@ -1,1 +1,0 @@
-Achitechture of GRID
