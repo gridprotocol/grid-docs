@@ -1,3 +1,7 @@
+# FAQ
+
+Some questions to check.
+
 ## Where is Platform running?
 
 The platform refers to a series of service interfaces provided by the service provider to the users, and it is the responsibility of the service provider to start and maintain it.

@@ -1,3 +1,7 @@
+# Infrastruct on provider
+
+Providers must prepare some local environment to become available.
+
 ## Provider Infrastructure
 
 The provider deploys Kubernetes container orchestration software. The provider is responsible for planning the number of nodes to deploy based on its available resources and adding these nodes to the Kubernetes cluster. The applications deployed by users will run on these nodes, and the provider must ensure that all local nodes are functioning properly to ensure the smooth operation of user applications.

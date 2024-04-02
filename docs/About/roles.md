@@ -1,3 +1,9 @@
+# Roles in GRID
+
+Provier is a node with computing resources and willing to serve users to gain profit.
+
+User is the consumer of computing resources, and the amount of tokens paid to providers is according to the number of resources and the duration of the order accepted by a provider. 
+
 ## Provider
 
 The computing nodes serve as the suppliers of computational power in the computing marketplace. They utilize container orchestration software to organize existing hardware resources, including processors, memory, storage, and graphics cards. Subsequently, they start the gateway service to provide various API interfaces externally, enabling node functionalities such as identity authentication, application deployment, and application access.
