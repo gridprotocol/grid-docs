@@ -1,0 +1,3 @@
+## GATEWAY
+
+The gateway is the core software used by computational nodes to provide computational services externally. It is operated by computational nodes and provides HTTP API interfaces for various verification and deployment functions. It interacts with the local Kubernetes cluster to deploy user-provided resource description YAML files into the cluster and create services as access entry points (endpoints) for user applications.
