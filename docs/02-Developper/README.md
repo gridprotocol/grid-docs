@@ -1,1 +1,1 @@
-Here are some resources for developpers.
+Here are some infomation for developpers.
