@@ -1,0 +1,17 @@
+# Summary
+
+* [Introduction](docs/01-Introduction/README.md)
+  * [What-is-GRID](docs/01-Introduction/introduction.md)
+  * [Roles](docs/01-Introduction/roles.md)
+* [Architechture](docs/02-Achitechture/README.md)
+  * [Gateway](docs/02-Achitechture/gateway.md)
+  * [Platform](docs/02-Achitechture/platform.md)
+  * [Infratructure](docs/02-Achitechture/infrastructure.md)
+  * [Contracts](docs/02-Achitechture/contracts.md)
+* [Developper](docs/03-Developper/README.md)
+  * [http-api-for-gateway](docs/03-Developper/http-api-for-gateway.md)
+  * [http-api-for-platform](docs/03-Developper/http-api-for-platform.md)
+  * [work-flow](docs/03-Developper/work-flow.md)
+* [Community](docs/04-Community/community.md)
+* [FAQ](docs/05-FAQ/FAQ.md)
+* [Terminology](docs/06-Terminology/terminology.md)
