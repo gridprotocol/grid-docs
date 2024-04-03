@@ -1,1 +1,3 @@
-about architecture
+The core of GRID is the gateway daemon running on each provider and the platform server offering many APIs for user and provider to interact with the smart contracts on chain.
+Kubernetes and nodes must be deployed on each provider to make computing power available before they can provide service to users and gain profit.
+The smart contracts on chain are used for provider info management and settlement funcionality.

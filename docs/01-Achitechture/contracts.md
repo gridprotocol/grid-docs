@@ -10,4 +10,8 @@ In the GRID project, blockchain and smart contracts running on the blockchain ar
 
 ## Contracts
 
-The contract is used to record the registration information of nodes (CP) and the information of orders (Order) created by users.
+The node contract is used to record the registration information of nodes (CP).
+
+The market contract is used to manage the information of orders created by users, and complete the settlement operations.
+
+The erc20 contract is used to manage erc20 token of all accounts.

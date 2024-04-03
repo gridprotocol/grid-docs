@@ -1,1 +1,1 @@
-about developper
+Here are some resources for developpers.
