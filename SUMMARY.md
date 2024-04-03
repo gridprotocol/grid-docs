@@ -16,7 +16,7 @@
   * [Where is Platform running](docs/04-FAQ/1.md)
   * [How to startup a gateway](docs/04-FAQ/2.md)
   * [How to customize resources](docs/04-FAQ/3.md)
-* [Terminology](README.md)
+* [Terminology](docs/05-Terminology/README.md)
   * [User](docs/05-Terminology/User.md)
   * [Provider](docs/05-Terminology/Provider.md)
   * [Kubernetes](docs/05-Terminology/Kubernetes.md)
