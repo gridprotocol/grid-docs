@@ -1,6 +1,9 @@
 # Summary
 
 * [Introduction](README.md)
+  * [Design](docs/00-Introduction/design.md)
+  * [Work-Flow](docs/00-Introduction/workflow.md)
+  * [Computing-Layer](docs/00-Introduction/computinglayer.md)
 * [Architechture](docs/01-Achitechture/README.md)
   * [Roles](docs/01-Achitechture/roles.md)
   * [Gateway](docs/01-Achitechture/gateway.md)
