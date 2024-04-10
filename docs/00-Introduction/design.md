@@ -2,6 +2,8 @@
 
 The architechture is constructed by 3 layers:
 
+<img src="/img/Module.png">
+
 ## User Layer
 
 The user layer is made up of the frontend and the backend, it is responsible for offering most of the operating APIs for all kind of nodes, including user nodes and provider nodes.
@@ -24,4 +26,3 @@ The gateway is a daemon application running by providers, dealing with the greet
 
 The k8s cluster is used to integrate all computing resources, and run user's application images in containers automatively.
 
-<img src="/img/Module.png">
