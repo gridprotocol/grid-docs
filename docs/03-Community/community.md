@@ -1,7 +1,7 @@
 
 Website:  https://gridprotocol.org/
 
-communicate
+Community
 twitter:  https://x.com/GridProtocolOrg
 
 Docs:
