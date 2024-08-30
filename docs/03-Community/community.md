@@ -1,14 +1,9 @@
 
-contact us
-email contact@memolabs.org
-
-Memolabs official web https://memolabs.org/
+Website:  https://gridprotocol.org/
 
 communicate
-twitter https://twitter.com/MemoLabsOrg
+twitter:  https://x.com/GridProtocolOrg
 
-discord https://discord.com/invite/YG4Ydv2E7X
+Docs:
+https://gridprotocol.gitbook.io/gridprotocol
 
-telegram https://t.me/MemoLabsio
-
-reddit https://www.reddit.com/user/memolabs/
