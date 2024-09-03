@@ -28,4 +28,4 @@
 * [APIs](docs/06-APIs/README.md)
   * [Backend](docs/06-APIs/Backend.md)
   * [Platform](docs/06-APIs/Platform.md)
-  
+  * [Contracts](docs/06-APIs/Contracts.md)
