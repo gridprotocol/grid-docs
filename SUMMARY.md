@@ -25,3 +25,6 @@
   * [ReverseProxy](docs/05-Terminology/ReverseProxy.md)
   * [Platform](docs/05-Terminology/Platform.md)
   * [SmartContract](docs/05-Terminology/SmartContract.md)
+* [APIs](docs/06-APIs/README.md)
+  * [Backend](docs/06-APIs/Backend.md)
+  * [Platform](docs/06-APIs/Platform.md)
