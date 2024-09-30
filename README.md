@@ -1,4 +1,4 @@
-# Introduction12
+# Introduction
 
 GRID is a comprehensive system that provides a trading marketplace for computing nodes and users, enabling automated settlement of service fees. It allows computing nodes to utilize the GRID gateway for order verification, application deployment, and other functionalities, while registering their resource information for users to select and utilize.
 

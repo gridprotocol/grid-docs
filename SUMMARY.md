@@ -10,6 +10,7 @@
   * [Platform](docs/01-Achitechture/platform.md)
   * [Infratructure](docs/01-Achitechture/infrastructure.md)
   * [Contracts](docs/01-Achitechture/contracts.md)
+* [Roadmap](docs/02-Roadmap/README.md)
 * [Community](docs/03-Community/community.md)
 * [FAQ](docs/04-FAQ/README.md)
   * [Where is Platform running](docs/04-FAQ/1.md)
