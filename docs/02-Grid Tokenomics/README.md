@@ -2,7 +2,7 @@
 
 ## Introduction
 
-GRID AI protocol has introduced $GRID token as a cornerstone for governance and representation of rights within its ecosystem. 
+GRID AI protocol has introduced $GRID token as a cornerstone for governance and representation of rights within its ecosystem.
 
 This token empowers $GRID community holders, the founding team, and committee members to collaborate in the development, voting, decision-making, and management of GRID AI protocol.
 $GRID serves as the governance and non-refundable functional utility token of GRID Network. With a maximum supply of 300,000,000, it is issued on Ethereum (ERC20) with 49% of the tokens allocated for incentivizing community, and Providers. Focused on facilitating community governance, offering fee discounts, granting stake rights, and providing community incentives, $GRID aims to cultivate a vibrant ecosystem for GRID Network, thereby propelling its long-term growth and decentralization.
