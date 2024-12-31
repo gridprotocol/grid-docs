@@ -28,3 +28,6 @@
   * [Backend](docs/07-APIs/Backend.md)
   * [Platform](docs/07-APIs/Platform.md)
   * [Contracts](docs/07-APIs/Contracts.md)
+* [Instructions](docs/08-Instructions/README.md)
+  * [Provider](docs/08-Instructions/How-to-become-provider.md)
+  
