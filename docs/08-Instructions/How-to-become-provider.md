@@ -1,79 +1,171 @@
-# Becoming a Grid Trading Market Provider
+# Grid CP Installation Process
 
-To become a provider in the grid trading market, you need to register your provider information, deploy and configure a local Kubernetes cluster, and start the backend program. Here is the step-by-step process:
+## Prerequisites
 
-## 1. Register Provider Information
+Before installing CP, ensure the following prerequisites are met:
 
-- Navigate to the frontend provider page and register by clicking the "Become A Provider" button.
-- Fill in the required information such as name, IP address, port, and domain name.
+- A **public IP address** is available
+- The IP address has a **bound domain name**
+- **Go version 1.21+** is installed
+- Multiple hosts with **NVIDIA GPUs** are prepared
 
-<img src="/img/provider1.png">
+---
 
-## 2. Deploy Local Kubernetes Cluster and Node Registration/Configuration
+## Install Kubernetes
 
-After completing the provider information registration, you need to configure your local Kubernetes cluster and set labels for each cluster node with the following steps:
+To deploy Kubernetes v1.25.3, follow this guide:  
+<https://blog.csdn.net/m0_43445928/article/details/130524917>
 
-### 2.1 Deploy Local Kubernetes Cluster
+_Alternative_: Deploy Kubernetes using your preferred method.
 
-- Refer to the deployment method here: [CSDN Blog Post](https://blog.csdn.net/m0_43445928/article/details/130524917).
-- Alternatively, you can deploy based on your own deployment experience.
+---
 
-### 2.2 Register Nodes through the Frontend Interface
+## Register CP on Web Interface
 
-- On the frontend interface's "addnode" page, enter the node configuration and unit price information to complete the node registration.
-- A unique node ID will be automatically assigned for identifying this node within the provider.
+1. Access Grid's official portal:  
+   <https://grid.metamemo.one/>
+2. Navigate to **Grid Provider** section
+3. Click **Become A Provider**
+4. Complete registration form with:
+   - Provider name
+   - Public IP address
+   - Service port
+   - Domain name
 
-<img src="/img/provider2.png">
+---
 
-### 2.3 Configure Labels for Each Node Using Node ID
+## Add Nodes via Web Interface
 
-- Node IDs start incrementing from 0.
-- First, check the node ID on the frontend interface's node details page, then set labels for each node using the ID as the label. For example:
+1. Go to **Add Node** page
+2. Configure node parameters:
 
-```sh
-  kubectl label node nodename id=0
+   ```plaintext
+   Node Name Format: node-[number] (e.g., node-1)
+   Pricing Strategy: Set your price per compute unit
+   ```
+
+3. **Node ID Assignment Rule**:  
+   `Node ID = Node Name Number - 1`  
+   Example:  
+   `node-1` → ID `0`  
+   `node-5` → ID `4`
+
+---
+
+## Configure Kubernetes Node Labels
+
+### Step 1: Retrieve Node ID
+
+Check node ID in web interface's node details page.
+
+### Step 2: Apply Labels
+
+```bash
+kubectl label node <NODE_NAME> id=<NODE_ID>
 ```
 
-Replace nodename with the actual node name, and 0 with the actual node ID.
+Example for node `gpu-server-1` with ID `3`:
 
-## Backend Program Startup Process
+```bash
+kubectl label node gpu-server-1 id=3
+```
 
-### 3.1 Download the Backend Program, Startup Script, and Configuration Files Locally
+---
 
-- Download the backend program, startup script, and configuration files to your local machine.
+## Build & Configure CP Backend
 
-### 3.2 Import or Create a Wallet
+### 1. Compile from Source
 
-- Navigate to the directory where the backend program is located.
-- Import an existing wallet using the private key (`sk`) with the following command:
+```bash
+git clone https://github.com/gridprotocol/computing-api.git
+cd computing-api/bin
+make clean && make
+```
 
-  ```sh
-  ./computing-api wallet import --sk=234fe73f5154570065a202f185dca074f1d7482a5e08ce093a92ed96807a6cf0 --pw=123123
-  ```
+### 2. Wallet Management
 
-Here, sk represents the provider wallet private key, and pw represents the wallet repository password.
+#### Import Existing Wallet
 
-Alternatively, you can create a new wallet using the init command.
+```bash
+./computing-api wallet import \
+  --sk=234fe73f5154570065a202f185dca074f1d7482a5e08ce093a92ed96807a6cf0 \
+  --pw=123123
+```
 
-### 3.3 Fund the Provider Wallet with Gas Fees and Credits
+#### Create New Wallet
 
-- Contact the official administrator to top up the provider wallet with gas fees and credits.
+```bash
+./computing-api wallet init --pw=STRONG_PASSWORD
+```
 
-### 3.4 Modify the Configuration File
+---
 
-- Update the `http listen` port in the `config.toml` file to the desired port for startup. For example, set it to 12347.
-This completes the specified sections of the backend program startup process in English within a Markdown document.
+## Gas Fee Recharge
 
-<img src="/img/provider3.png">
+Contact Grid administrators for blockchain gas fee top-up:  
+`admin@grid.metamemo.one`
 
-### 3.5 Start the Backend
+---
 
-- Execute the backend startup script with the following command:
+## Configuration File Setup
 
-  ```sh
-  ./restart test
-  ```
+Edit `computing-api/bin/config.toml`:
 
-Here, test indicates the use of a test chain contract; the specific value should be set according to the actual situation.
+```toml
+# Network Configuration
+[Grpc]
+  Listen = "0.0.0.0:12345"  # gRPC service port
 
-The operation logs are stored in the log file.
+[Http]
+  Listen = "0.0.0.0:12346"  # HTTP service port
+  HSKey = "memo.io"          # Session encryption key
+  CookieExpire = 86400       # 24h session validity
+
+# Wallet Settings
+[Remote]
+  KeyStore = "./.keystore"    # Wallet storage path
+  Wallet = "0xEf95c72C836605203F7f66788E450Af2a4141957"  # Your wallet address
+
+# Infrastructure Endpoints
+[Platform]
+  Url = "http://183.240.197.189:18002"  # Production database URL
+
+[Validator]
+  Url = "http://validator.grid.io:8081"  # Validation service endpoint
+```
+
+---
+
+## Service Startup
+
+### Start Backend Service
+
+```bash
+# Syntax: ./restart.sh [chain_type]
+./restart.sh test    # Testnet
+./restart.sh dev     # Development
+./restart.sh prod    # Production
+```
+
+### Monitor Logs
+
+```bash
+tail -f log/computing-api.log | grep -E 'ERROR|WARN'
+```
+
+### Verify Service Status
+
+```bash
+curl http://localhost:12346/healthcheck
+# Expected response: {"status":"ok"}
+```
+
+---
+
+## Troubleshooting
+
+| Issue                      | Solution                          |
+|----------------------------|-----------------------------------|
+| Wallet import failure      | Verify SK format and file permissions |
+| Node label mismatch        | Confirm kubectl context is correct |
+| Blockchain RPC errors      | Check network connectivity        |
