@@ -1,0 +1,29 @@
+# Contract Addresses
+
+All contract addresses deployed for GRID.
+
+## Testnet
+
+| Contract Name | Contract Address |
+|---------|---------|
+| Instances | 0xA6279dD80101Cb1FdAB62685B546F9d3268a9E3C |
+| version | 0xcd6BFdD768Fd1b5771cbD00187d7dD95F068b341 |
+| market | 0xAC245130D4407FeBb42F9A8cc5104DA479295368|
+| access | 0x650181533aa2b2a1E18A46603Af521a9F59E39ec|
+|credit | 0x76dc1DcADb551dBc8977C3a5a85F91AE9f502486|
+|registry | 0x57A6865b298601e8ff414Ac532dC81c134903904|
+|swap | 0xaDd53b6A49922377C9b31978a20A7a6ef93303cD|
+|pledge | 0x3F8291f68F89fD69417e3034816E255CEF911778|
+
+## Mainnet
+
+| Contract Name | Contract Address |
+|---------|---------|
+| Instances | 0xC4e4c83a2b4B4d3B59f8E798BD48dcD96B6d32f3 |
+| version | 0xaA6068adb02e803F91F1021fEAF5D92208dF777B |
+| market |0x5BFAc0cBf45eC38c3EDf41457688CDA5F8D414f8 |
+| access |0x4eE38F46ad206a82f1c9e6291Fd8Eb9CFeAcCaf3 |
+|credit |0x531e58B4c6d4FddBE29C27EBC2CaF3Fd42893D63 |
+|registry | 0x2Aa6b2037C0AD4AC1c4B356632b539f29c4E26Af|
+|swap |0xE3A1BBaF6D726957a395E900796063270FE017eD |
+|pledge | 0xa6f4EFe7A6f68eFb54Af48c77a8b947736826a14|
