@@ -1,6 +1,7 @@
 # Summary
 
-* [Introduction](README.md)
+* [Getting Startec](docs/Start/README.md)
+* [Introduction](docs/Introduction/README.mdREADME.md)
   * [Design](docs/Introduction/design.md)
   * [Work-Flow](docs/Introduction/workflow.md)
   * [Computing-Layer](docs/Introduction/computinglayer.md)
